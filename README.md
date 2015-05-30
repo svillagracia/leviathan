@@ -1,4 +1,4 @@
-# leviathan
+# Leviathan
 
 a [Sails](http://sailsjs.org) application
-# leviathan
+
