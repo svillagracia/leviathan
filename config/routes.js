@@ -44,6 +44,15 @@ module.exports.routes = {
 'get /auth/:provider/callback': 'AuthController.callback',
 'get /auth/:provider/:action': 'AuthController.callback',
 
+'get /api/weightroom': 'WeightroomController.getArticles',
+
+"get *":{
+  controller:"PagesController",
+  action:"index",
+  skipAssets: true,
+  skipRegex: /^\/api\/.*$/
+}
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

@@ -22,6 +22,14 @@ Leviathan.config(['$routeProvider','$locationProvider',function($routeProvider,$
     templateUrl:'/views/about.html',
     controller:'StaticCtrl'
   })
+  .when('/weightroom',{
+    templateUrl:'/views/weightroom/index.html',
+    controller:'WeightRoomCtrl'
+  })
+  .when('/whiteboard',{
+    templateUrl:'/views/whiteboard/index.html',
+    controller:'WhiteBoardCtrl'
+  })
   .otherwise({
     templateUrl:'/views/404.html'
   });
