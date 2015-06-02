@@ -26,6 +26,13 @@ var User = {
     },
     gender:{
       type:'string'
+    },
+
+    ////////// associations //////////
+
+    lifts:{
+      collection:'Lift',
+      via:'user'
     }
   }
 };
