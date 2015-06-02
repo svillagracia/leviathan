@@ -14,6 +14,18 @@ var User = {
     passports:{
       collection:'Passport',
       via:'user'
+    },
+    displayName:{
+      type:'string',
+    },
+    height: {
+      type:'string'
+    },
+    weight: {
+      type:'integer'
+    },
+    gender:{
+      type:'string'
     }
   }
 };

@@ -6,6 +6,10 @@
  * the basics of Passport.js to work.
  */
 var AuthController = {
+  check: function(req,res){
+    console.log(req.session);
+    res.send(req.user || false);
+  },
   /**
    * Render the login page
    *
@@ -69,10 +73,10 @@ var AuthController = {
    */
   logout: function (req, res) {
     req.logout();
-    
+
     // mark the user as logged out for auth purposes
     req.session.authenticated = false;
-    
+
     res.redirect('/');
   },
 
@@ -132,11 +136,11 @@ var AuthController = {
       var flashError = req.flash('error')[0];
 
       if (err && !flashError ) {
-        req.flash('error', 'Error.Passport.Generic');
+        console.log('error', 'Error.Passport.Generic');
       } else if (flashError) {
-        req.flash('error', flashError);
+        console.log('error', flashError);
       }
-      req.flash('form', req.body);
+      console.log('form', req.body);
 
       // If an error was thrown, redirect the user to the
       // login, register or disconnect action initiator view.
@@ -156,21 +160,27 @@ var AuthController = {
     }
 
     passport.callback(req, res, function (err, user, challenges, statuses) {
+      console.log('user',user);
       if (err || !user) {
         return tryAgain(challenges);
       }
 
       req.login(user, function (err) {
+        console.log('err',err);
         if (err) {
           return tryAgain(err);
         }
-        
+
         // Mark the session as authenticated to work with default Sails sessionAuth.js policy
         req.session.authenticated = true
-        
+
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
-        res.redirect('/');
+       if(req.user.username === null){
+         res.redirect('/');
+       }else{
+         res.send({success: true, user: req.user.id})
+       }
       });
     });
   },

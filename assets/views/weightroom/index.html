@@ -1,4 +1,19 @@
-<h1>This is the Weightroom controller.</h1>
-<p>Reddit shit goes here</p>
-
-{{articles}}
+<md-toolbar class="md-theme-light">
+  <h2 class="md-toolbar-tools">
+    <span>WEIGHTROOM</span>
+  </h2>
+</md-toolbar>
+<section layout="row" layout-sm="column" layout-align="center center">
+  <md-content>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="article in articles">
+        <div class="md-list-item-text">
+          <h3>{{article.data.title}}</h3>
+          <h4>{{article.data.domain}}</h4>
+          <md-button class="md-raised md-primary" ng-href="{{article.data.url}}" target="_blank">VIEW article</md-button>
+        </div>
+        <md-divider></md-divider>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</section>
