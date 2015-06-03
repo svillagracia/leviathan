@@ -1,4 +1,5 @@
 Leviathan.controller('WeightRoomCtrl',['$scope','$http','$rootScope',function($scope,$http,$rootScope){
+
   console.log('Weight Room Controller Loaded!');
 
   $rootScope.loading = true;
@@ -8,4 +9,5 @@ Leviathan.controller('WeightRoomCtrl',['$scope','$http','$rootScope',function($s
     $rootScope.loading = false;
     console.log('$scope.articles is: ',$scope.articles);
   });
+
 }]);

@@ -7,7 +7,7 @@
  */
 var AuthController = {
   check: function(req,res){
-    console.log(req.session);
+    // console.log(req.session);
     res.send(req.user || false);
   },
   /**

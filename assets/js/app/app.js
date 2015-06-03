@@ -1,10 +1,16 @@
 var Leviathan = angular.module('Leviathan',['ngRoute','ngResource','ngMaterial']);
 
-Leviathan.run([function(){
+Leviathan.run('UserService'[function(UserService){
+
   console.log('Leviathan is running');
+
+  UserService.check(function(data){
+    console.log(data);
+  });
+
 }]);
 
-Leviathan.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
+Leviathan.controller('AppCtrl', ['$scope', '$mdSidenav', 'UserService', '$rootScope', function($scope, $mdSidenav, UserService, $rootScope){
   $scope.toggleSidenav = function(menuId) {
     $mdSidenav(menuId).toggle();
   };
