@@ -26,3 +26,19 @@ https://github.com/google/material-design-icons
 md-sidenav {
   background: #354499;
 }
+
+.md-subheader-inner {
+  background-color: #354499;
+  margin: 0;
+}
+
+#loader{
+  position: absolute;
+  color: black;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -100px;
+  text-align: center;
+  z-index: 10;
+}
+

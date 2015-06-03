@@ -1,0 +1,25 @@
+<md-toolbar class="md-theme-light">
+  <h2 class="md-toolbar-tools">
+    <span>Register</span>
+  </h2>
+</md-toolbar>
+<div class="container">
+  <form name="signupForm" ng-submit="register()">
+    <md-input-container>
+      <label>Username</label>
+      <input ng-model="formData.username" type="text">
+    </md-input-container>
+    <md-input-container>
+      <label>Email</label>
+      <input ng-model="formData.email" type="email">
+    </md-input-container>
+    <md-input-container>
+      <label>Password</label>
+      <input ng-model="formData.password" type="password" minlength="8">
+    </md-input-container>
+  <div layout="row">
+    <md-button>Submit</md-button>
+  </form>
+  <md-button class="md-primary" ng-click="logIn('facebook')">Login with Facebook</md-button>
+  </div>
+</div>

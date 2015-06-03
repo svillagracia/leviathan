@@ -15,9 +15,6 @@ var User = {
       collection:'Passport',
       via:'user'
     },
-    displayName:{
-      type:'string',
-    },
     height: {
       type:'string'
     },

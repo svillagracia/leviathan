@@ -30,6 +30,14 @@ Leviathan.config(['$routeProvider','$locationProvider',function($routeProvider,$
     templateUrl:'/views/whiteboard/index.html',
     controller:'WhiteBoardCtrl'
   })
+  .when('/login',{
+    templateUrl:'/views/auth/login.html',
+    controller:'AuthCtrl'
+  })
+  .when('/signup',{
+    templateUrl:'/views/auth/signup.html',
+    controller:'AuthCtrl'
+  })
   .otherwise({
     templateUrl:'/views/404.html'
   });

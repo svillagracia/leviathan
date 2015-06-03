@@ -1,0 +1,21 @@
+<md-toolbar class="md-theme-light">
+  <h2 class="md-toolbar-tools">
+    <span>Login</span>
+  </h2>
+</md-toolbar>
+<div class="container">
+  <form name="userForm" ng-submit="logIn(null,identifier,password)">
+    <md-input-container>
+      <label>Email or Username</label>
+      <input ng-model="identifier" type="text">
+    </md-input-container>
+    <md-input-container>
+      <label>Password</label>
+      <input ng-model="password" type="password" minlength="8">
+    </md-input-container>
+  <div layout="row">
+    <md-button>Submit</md-button>
+  </form>
+  <md-button class="md-primary" ng-click="logIn('facebook')">Login with Facebook</md-button>
+  </div>
+</div>
